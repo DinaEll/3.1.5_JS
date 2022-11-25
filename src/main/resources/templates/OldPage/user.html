@@ -13,9 +13,9 @@
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark"> <!-- Верхняя полоса инфы админа/юзера -->
     <div class="container-fluid me-auto">
         <div class="d-flex text-white">    <!-- Верхняя полоса инфы админа/юзера -->
-            <div class="p-1 font-weight-bold" id="headerUsername"></div>
+            <div class="p-1 font-weight-bold" th:utext="${user.getName()}"></div>
             <div class="p-1">with roles:</div>
-            <div class="p-1" id="headerRoles"></div>
+            <div class="p-1" th:utext="${user.getRolesToString()}"></div>
         </div>
     </div>
 
@@ -59,7 +59,14 @@
                                     </tr>
                                     </thead>
 
-                                    <tbody id="userPageBody"></tbody>
+                                    <tbody>
+                                    <tr th:object="${user}">
+                                        <td th:utext="${user.getId()}">ID</td>
+                                        <td th:utext="${user.getName()}">Name</td>
+                                        <td th:utext="${user.getAge()}">Age</td>
+                                        <td th:utext="${user.getRolesToString()}">Role</td>
+                                    </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -83,8 +90,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-<script src="user.js"></script>
 
 </body>
 </html>

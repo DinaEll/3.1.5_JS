@@ -152,16 +152,16 @@
                                                                                class="form-control" id="edit-password"
                                                                                th:value="${user.password}">
                                                                     </div>
-<!--                                                                    <div class="form-group text-center">-->
-<!--                                                                        <label for="e-role"><strong>Role</strong></label>-->
-<!--                                                                        <select class="custom-select"-->
-<!--                                                                                id="e-Role"-->
-<!--                                                                                multiple="multiple" name="role" size="2"-->
-<!--                                                                                th:value="${newRole.getRole()}">-->
-<!--                                                                            <option th:value="ROLE_ADMIN">ADMIN</option>-->
-<!--                                                                            <option th:value="ROLE_USER">USER</option>-->
-<!--                                                                        </select>-->
-<!--                                                                    </div>-->
+                                                                    <!--                                                                    <div class="form-group text-center">-->
+                                                                    <!--                                                                        <label for="e-role"><strong>Role</strong></label>-->
+                                                                    <!--                                                                        <select class="custom-select"-->
+                                                                    <!--                                                                                id="e-Role"-->
+                                                                    <!--                                                                                multiple="multiple" name="role" size="2"-->
+                                                                    <!--                                                                                th:value="${newRole.getRole()}">-->
+                                                                    <!--                                                                            <option th:value="ROLE_ADMIN">ADMIN</option>-->
+                                                                    <!--                                                                            <option th:value="ROLE_USER">USER</option>-->
+                                                                    <!--                                                                        </select>-->
+                                                                    <!--                                                                    </div>-->
 
                                                                     <div class="row mb-4">
                                                                         <label for="role-edit"
@@ -301,16 +301,16 @@
                                             <input type="password" class="form-control" id="password"
                                                    th:field="*{newUser.password}">
                                         </div>
-<!--  my role -->
-<!--                                        <div class="form-group text-center">-->
-<!--                                            <label for="role"><strong>Role</strong></label>-->
-<!--                                            <select type="text" class="custom-select" th:field="*{newRole.role}"-->
-<!--                                                    id="role" multiple="multiple" size="2">-->
-<!--                                                <option th:value="ROLE_ADMIN">ADMIN</option>-->
-<!--                                                <option th:value="ROLE_USER">USER</option>-->
-<!--                                            </select>-->
-<!--                                        </div>-->
-<!-- FFF role-->
+                                        <!--  my role -->
+                                        <!--                                        <div class="form-group text-center">-->
+                                        <!--                                            <label for="role"><strong>Role</strong></label>-->
+                                        <!--                                            <select type="text" class="custom-select" th:field="*{newRole.role}"-->
+                                        <!--                                                    id="role" multiple="multiple" size="2">-->
+                                        <!--                                                <option th:value="ROLE_ADMIN">ADMIN</option>-->
+                                        <!--                                                <option th:value="ROLE_USER">USER</option>-->
+                                        <!--                                            </select>-->
+                                        <!--                                        </div>-->
+                                        <!-- FFF role-->
                                         <div>
                                             <label for="roles" class="form-label">Role</label>
                                             <select class="form-select" name="roles" size="2"
@@ -323,7 +323,7 @@
                                             </select>
                                         </div>
 
-<!-- FFF role-->
+                                        <!-- FFF role-->
                                         <div class="form-group text-center">
                                             <button type="submit" value="Save" class="btn btn-success">Add new user</button>
                                         </div>
@@ -357,8 +357,8 @@
                                 <td th:text="${admin.age}"/>
                                 <td><a th:each="role : ${admin.getRolesToString()}">
                                     <p th:text="${role.toString()}"></p></a></td>
-<!-- FFF                               <div> th:each="admin_role : ${admin.getRoles()}">-->
-<!--                                    <span th:text="${admin_role.getName()}">role</span></div>-->
+                                <!-- FFF                               <div> th:each="admin_role : ${admin.getRoles()}">-->
+                                <!--                                    <span th:text="${admin_role.getName()}">role</span></div>-->
                             </tr>
                             </tbody>
                         </table>
@@ -382,6 +382,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>
+<script src="admin.js"></script>
 
 </body>
 </html>

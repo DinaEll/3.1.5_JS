@@ -33,8 +33,8 @@ public class RESTController {
 
 
     @GetMapping("/user") //page one user
-    public ResponseEntity<User> showUser(@AuthenticationPrincipal User user) {
-        return new ResponseEntity<>(userService.findByUsername(user.getName()), HttpStatus.OK);
+    public ResponseEntity<?> showUser(@AuthenticationPrincipal User user) {
+        return new ResponseEntity<>(userService.loadUserByUsername(user.getName()), HttpStatus.OK);
     }
 
 

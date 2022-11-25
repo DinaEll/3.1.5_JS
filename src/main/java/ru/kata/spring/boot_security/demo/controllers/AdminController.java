@@ -22,17 +22,20 @@ public class AdminController {
     @GetMapping("")
     public String showAllUsers(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        model.addAttribute("admin", userService.findByUsername(authentication.getName()));
+        model.addAttribute("admin", userService.loadUserByUsername(authentication.getName()));
         model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("newUser", new User());
         //model.addAttribute("newRole", new Role());
-        model.addAttribute("currentUser", userService.findByUsername(authentication.getName()));
+        model.addAttribute("currentUser", userService.loadUserByUsername(authentication.getName()));
         model.addAttribute("getAllRoles", userService.getAllRoles());
 
         return "allusers";
 
-        //alltest Koch
-        //adminB Bob
+        //alltest Koch - работает общая страница, удаление
+        //не работает страница админа юзера, новый юзер не добавляется, весь апдейт, верхний бар
+
+        //adminB Bob - работает верхний бар, страница админ юзер наполовину
+        //не работает общая страница, не видно юзеров,
         //allusers my
     }
 
