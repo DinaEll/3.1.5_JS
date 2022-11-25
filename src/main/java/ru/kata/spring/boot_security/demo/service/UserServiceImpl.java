@@ -112,22 +112,4 @@ public class UserServiceImpl implements UserService {
         return role.get();
     }
 
-    @Override
-    public Role getRoleById(int id) {
-        Optional<Role> role = roleDao.getRoleID(id);
-        if (role.isEmpty()) {
-            throw new RuntimeException("role not found - " + id);
-        }
-        return role.get();
-    }
-
-    @Override
-    @Transactional
-    public void saveRole(String name) {
-        if (roleDao.getRoleByName(name).isPresent()) {
-            throw new RuntimeException("role not found - " + name);
-        }
-        roleDao.saveRoleName(name);
-    }
-
 }

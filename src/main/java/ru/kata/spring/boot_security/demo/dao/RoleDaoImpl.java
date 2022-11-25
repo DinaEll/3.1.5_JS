@@ -16,20 +16,6 @@ public class RoleDaoImpl implements RoleDao {
     private EntityManager entityManager;
 
     @Override
-    public Optional<Role> getRoleID(int id) {
-//        return Optional.ofNullable(entityManager.find(Role.class,id));
-        TypedQuery<Role> query = entityManager
-                .createQuery("select r from Role r where r.id = :id", Role.class)
-                .setParameter("id", id);
-        return Optional.ofNullable(query.getSingleResult());
-    }
-
-    @Override
-    public void saveRoleName(String name) {
-        entityManager.persist(new Role(name));
-    }
-
-    @Override
     public Optional<Role> getRoleByName(String name) {
         TypedQuery<Role> query = entityManager
                 .createQuery("select r from Role r where r.role = :name", Role.class)
@@ -41,13 +27,9 @@ public class RoleDaoImpl implements RoleDao {
     public List<Role> getAllRoles() {
         //return entityManager.createQuery("select r FROM Role r", Role.class).getResultList();
         TypedQuery<Role> query = entityManager
-                .createQuery("FROM Role", Role.class);
+//                .createQuery("FROM Role", Role.class);
+                .createQuery("select r FROM Role r", Role.class);
         return query.getResultList();
-    }
-
-    @Override
-    public void add(Role role) {
-        entityManager.persist(role);
     }
 
 }

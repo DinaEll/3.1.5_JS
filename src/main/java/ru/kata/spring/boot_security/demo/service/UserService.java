@@ -20,6 +20,5 @@ public interface UserService extends UserDetailsService {
 
     List<Role> getAllRoles();
     Role getRoleByName(String name);
-    Role getRoleById(int id);
-    void saveRole(String name);
+
 }
