@@ -23,7 +23,8 @@ public class Role implements GrantedAuthority {
         this.role = role;
     }
 
-    @JsonBackReference
+//    @JsonBackReference
+//    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
